@@ -18,7 +18,6 @@ public class Principal {
 		worker.setBaseSalary(menu.leDouble("Base Salary:"));
 		
 		worker.setContracts(menu.contractList(menu.leInteiro("How many contracts to this worker? ")));
-		
 		System.out.println("Enter year and month to calculate income: ");
 		Integer year = menu.leInteiro("Type the year (YYYY): ");
 		Integer month = menu.leInteiro("Type the month (m) or (mm): ");
