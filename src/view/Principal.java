@@ -14,7 +14,7 @@ public class Principal {
 		worker.setDepartament(new Departament(menu.leString("Enter department's name:")));
 		System.out.println("Enter worker data:");
 		worker.setName(menu.leString("Name:")); 
-		worker.setLevel(WorkerLevel.valueOf(menu.leString("Level: ")));
+		worker.setLevel(WorkerLevel.valueOf(menu.chooseLevel()));
 		worker.setBaseSalary(menu.leDouble("Base Salary:"));
 		
 		worker.setContracts(menu.contractList(menu.leInteiro("How many contracts to this worker? ")));

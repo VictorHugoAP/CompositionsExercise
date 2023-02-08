@@ -28,6 +28,33 @@ public class Menu {
 		return list;
 	}
 	
+	public String chooseLevel() {
+		String level = "";
+		Integer option = 0;
+		
+		option = leInteiro("Choose the level: \n1)Junior \n2)MID Level \n3)Senior");
+		
+		switch(option) {
+			case 1:
+				level = "JUNIOR";
+				break;
+			
+			case 2:
+				level = "MID_LEVEL";
+				break;
+				
+			case 3:
+				level = "SENIOR";
+				break;
+			
+			default:
+				System.out.println("Invalid option, choose an option: ");
+				chooseLevel();
+		}
+		
+		return level;
+	}
+	
 	Scanner sc = new Scanner(System.in);
 	public String leString(String texto) {
 		System.out.println(texto);
