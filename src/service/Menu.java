@@ -21,8 +21,8 @@ public class Menu {
 			System.out.println("Enter contract #" + (i + 1) + " data:");
 			System.out.println("Date (DD/MM/YYYY): ");
 			contract.setDate((sdf.parse(sc.next())));
-			contract.setValuePerHour(leDouble("Value per hour: "));
-			contract.setHours(leInteiro("Duration (hours): "));
+			contract.setValuePerHour(readDouble("Value per hour: "));
+			contract.setHours(readInteger("Duration (hours): "));
 			list.add(contract);
 		}	
 		return list;
@@ -32,7 +32,7 @@ public class Menu {
 		String level = "";
 		Integer option = 0;
 		
-		option = leInteiro("Choose the level: \n1)Junior \n2)MID Level \n3)Senior");
+		option = readInteger("Choose the level: \n1)Junior \n2)MID Level \n3)Senior");
 		
 		switch(option) {
 			case 1:
@@ -48,27 +48,26 @@ public class Menu {
 				break;
 			
 			default:
-				System.out.println("Invalid option, choose an option: ");
-				chooseLevel();
+				System.out.println("Invalid option!");
+				level = chooseLevel();
 		}
 		
 		return level;
 	}
 	
 	Scanner sc = new Scanner(System.in);
-	public String leString(String texto) {
-		System.out.println(texto);
+	public String readString(String text) {
+		System.out.println(text);
 		return sc.nextLine();
 	}
 	
-	public Integer leInteiro(String texto) {
-		System.out.println(texto);
+	public Integer readInteger(String text) {
+		System.out.println(text);
 		return sc.nextInt();
 	}
 	
-	public Double leDouble(String texto) {
-		System.out.println(texto);
+	public Double readDouble(String text) {
+		System.out.println(text);
 		return sc.nextDouble();
 	}
-	
 }
